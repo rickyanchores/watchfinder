@@ -16,7 +16,7 @@ export default function Home() {
         page: '1',
         country: 'IT',
         sort_by: 'RELEVANCE',
-        max_price: '200',
+        max_price: '3000',
         product_condition: 'ALL',
         // brand: 'casio,seiko'
       },
@@ -28,8 +28,8 @@ export default function Home() {
 
     try {
       const response = await axios.request(options);
-      console.log('Fetched Data:', response.data);
-      setProductData(response.data);
+      console.log('Fetched Data:', response.data.data);
+      setProductData(response.data.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -41,11 +41,16 @@ export default function Home() {
         <h1 className="text-4xl font-bold">WatchFinder</h1>
         <Finder searchItem={fetchItem} />
       </div>
-      <div className="imageBox">
+      <div className="productBox bg-zinc-800 p-4 rounded-xl">
         {productData && productData.products && productData.products.length > 0 ? (
           <>
             <h1>{productData.products[0].product_title}</h1>
-            <img src={productData.products[0].product_image} alt="Product" />
+            <img className="w-[600px] m-auto" src={productData.products[0].product_photo} alt="Product" />
+            <h1>Price: £ {productData.products[0].product_price}</h1>
+            <button className="bg-orange-600 p-2">
+              <a className="" target="_blank" href={productData.products[0].product_url}>Link</a>
+            </button>
+            
           </>
         ) : (
           <p>Loading...</p>
