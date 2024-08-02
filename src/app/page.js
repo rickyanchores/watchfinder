@@ -36,18 +36,18 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="min-h-screen grid items-center justify-between p-12">
       <div>
-        <h1 className="text-4xl font-bold">WatchFinder</h1>
+        <h1 className="text-4xl font-bold">WatchUFinder</h1>
         <Finder searchItem={fetchItem} />
       </div>
-      <div className="productBox bg-zinc-800 p-4 rounded-xl">
+      <div className="productBox grid grid-cols-1 md:grid-cols-2 p-4 rounded-xl m-2">
         {productData && productData.products && productData.products.length > 0 ? (
           <>
-            <h1>{productData.products[0].product_title}</h1>
-            <img className="w-[600px] m-auto" src={productData.products[0].product_photo} alt="Product" />
-            <h1>Price: £ {productData.products[0].product_price}</h1>
-            <button className="bg-orange-600 p-2">
+            <img className="w-[560px] bg-zinc-700 rounded-md p-2 m-auto" src={productData.products[0].product_photo} alt="Product" />
+            <h1 className="bg-zinc-700 rounded-md p-2 m-2">{productData.products[0].product_title}</h1>
+            <h1 className="bg-zinc-900 rounded-md p-2 m-2 font-extrabold text-2xl">Price: £ {productData.products[0].product_price}</h1>
+            <button className="bg-orange-600 rounded-lg p-2">
               <a className="" target="_blank" href={productData.products[0].product_url}>Link</a>
             </button>
             
