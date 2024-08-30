@@ -16,14 +16,14 @@ const Finder = ({ searchItem }) => {
   return (
     <div className='Finder bg-zinc-900  p-2 rounded-xl m-auto mt-2 grid grid-cols-2 gap-2'>
       <input
-        className='bg-zinc-800 p-2 text-white rounded font-mono'
+        className='bg-zinc-800 p-2 text-white rounded '
         type="text"
         placeholder='Find item...'
         value={query}
         onChange={handleInputChange}
       />
       <button
-        className='bg-orange-600 text-white p-2 rounded font-mono'
+        className='bg-orange-600 text-white p-2 rounded '
         onClick={handleSearchClick}
       >
         Search

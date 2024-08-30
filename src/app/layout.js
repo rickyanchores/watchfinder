@@ -1,7 +1,11 @@
-import { Jura } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
-const jura = Jura({ subsets: ["latin"] });
+
+const roboto = Roboto({ 
+  subsets: ["latin"],
+  weight: "500"  // Use a string literal instead of a template literal.
+});
 
 export const metadata = {
   title: "WatchFinder",
@@ -11,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={jura.className}>{children}</body>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }
