@@ -41,10 +41,10 @@ export default function Home() {
   };
 
   return (
-    <main className="Home min-h-screen grid justify-center items-center p-12">
+    <main className="Home  min-h-screen grid justify-center items-center p-12">
       <div>
-        <h1 className="text-4xl font-bolder">WatchFinder</h1>
-        <p className="">Powered by Amazon API(real-time-amazon-data.p.rapidapi.com)</p>
+        <h1 className="text-4xl font-bolder font-mono">WatchFinder</h1>
+        <p className="font-mono">Powered by Amazon API(real-time-amazon-data.p.rapidapi.com)</p>
         <Finder searchItem={fetchItem} />
       </div>
       <div className="productBox grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 rounded-xl m-2">
@@ -54,10 +54,10 @@ export default function Home() {
           productData.map((product, index) => (
             <div key={index} className="productItem border-2 border-zinc-800 rounded-md p-4 m-auto">
               <img className="w-full h-60 object-cover rounded-md" src={product.product_photo} alt={product.product_title} />
-              <h1 className=" rounded-md mt-2 mb-2">{product.product_title}</h1>
-              <h1 className=" rounded-md font-extrabold text-2xl mt-2 mb-2">Price: {product.product_price}</h1>
+              <h1 className=" rounded-md mt-2 mb-2 font-mono">{product.product_title}</h1>
+              <h1 className=" rounded-md font-extrabold text-2xl mt-2 mb-2 font-mono">Price: {product.product_price}</h1>
               <button className="bg-orange-600 rounded-lg p-2">
-                <a className="" target="_blank" href={product.product_url}>Amazon Link</a>
+                <a className="font-mono" target="_blank" href={product.product_url}>Amazon Link</a>
               </button>
             </div>
           ))
