@@ -1,12 +1,15 @@
 'use client';
 
-import { useState } from "react";
+import { useState} from "react";
 import Finder from "../app/components/Finder"; // Adjust the import path as necessary
 import axios from "axios";
+
 
 export default function Home() {
   const [productData, setProductData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
 
   const fetchItem = async (query) => {
     setLoading(true);
